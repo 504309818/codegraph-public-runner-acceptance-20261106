@@ -1,0 +1,31 @@
+{
+  "enabled": false,
+  "repository": "504309818/codegraph-public-runner-acceptance-20261106",
+  "repository_id": 1448243941,
+  "source_sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+  "workflow_id": 409324708,
+  "workflow_sha": "b94866f8a57311ec72d34c432ea3fccf70862fa0",
+  "workflow_tree": {
+    ".github/workflows/acceptance.yml": "9ad6692ba40efa165f3bc15ebc86f52a5f2e28ac",
+    ".gitignore": "7a60b85e148f80966a550e5ab6a762a907c69ca6",
+    "F_pins.json": "7b60dfa958f13716844e4b805bd2dd3e27eb4109",
+    "LICENSE": "b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb",
+    "README.md": "e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d",
+    "adapter.cjs": "2932dc1b7c459324e5711beeb96a95fd7b40ea6a",
+    "cf_executor.py": "77495cba63d56268603e44078a379872b4a8d36f",
+    "cf_protocol.py": "ac2ff1e290bf11c99caa17b51552c34ca6e0b5af",
+    "controller.py": "566e28aa46e7daf2a12389e3dad4560112107941",
+    "index.cjs": "6737ef7074b681836d80faeadec7a17e7ee81b98",
+    "mcp_client.py": "7e157eb66914dd15dbc29325be1a8d6729151f0b",
+    "netgate.c": "39732bde5e620186075e6c3e06d9f4bcc145b09f",
+    "pins.json": "f4915cacdd0d07779a7908925c501945f615a42d",
+    "toy/app.js": "245f8a75c5ef2b51a19a7842b52beb5f48eeca9d",
+    "toy/math.js": "6f9dc139ee4c925483df9962f0a32ffc696edd8b",
+    "worker.cjs": "c5d4036480ece94bd6ee9e43ab07534a718e3911"
+  },
+  "branch": "cf-batch-request-20261107",
+  "allowed_actor_ids": [
+    144663440
+  ],
+  "mode": "F_BATCH_NEW_REQUEST_NOT_REALTIME_HTTP"
+}

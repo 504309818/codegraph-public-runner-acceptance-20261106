@@ -1,0 +1,10 @@
+{
+  "README.zh-CN.md": "f583aeb69bc39dc5325176a278d18a8dec1d7718626f4ee71b59842ade0e1a2b",
+  "install_candidate.py": "57e89f351fb550167ec973f064bb4facc84081ccc218061e69293abf2efc3508",
+  "mcp_client.py": "ab35c89de3e2c99289cfadfaa2d88491c0ccab0931361d9890b98332d502f63e",
+  "native_snapshot.json": "da65891fc2d668dad4a278f192d02f5f17d087833a8c3afe7bb87c1d09ecb8ff",
+  "pins.json": "bcc9392daf5e1cc86435161299d708d5ab43b42c2fbc855d046012dfa85a7e8a",
+  "registry.json": "8f6b7736e8e3590e2b7905b818533dd9d83f9d2b17ff60f1527bc9166fe59754",
+  "skills/tool-access-review/SKILL.md": "597fce6ee3932875d69984d0845be1a2eced6f446a625e768c2bbf3b26bd8af8",
+  "tool_access.py": "1969b07cd939db8944deb5bfd252cfb83a5ecbdedc68e52e0e37d9d84a7d9b11"
+}

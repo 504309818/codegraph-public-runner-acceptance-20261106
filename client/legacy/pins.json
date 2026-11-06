@@ -1,0 +1,26 @@
+{
+  "repository": "504309818/codegraph-public-runner-acceptance-20261106",
+  "owner": "504309818",
+  "sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+  "run_id": 42246979456,
+  "job_id": 127991653085,
+  "index_digest": "aea388efafbe95e4a9427189c9c9a829bb1d5b07651e6450c615cb828075f9de",
+  "files": {
+    ".github/workflows/acceptance.yml": "83fc891a035b898d0575a124384118be06216e55",
+    ".gitignore": "7a60b85e148f80966a550e5ab6a762a907c69ca6",
+    "LICENSE": "b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb",
+    "README.md": "e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d",
+    "adapter.cjs": "2932dc1b7c459324e5711beeb96a95fd7b40ea6a",
+    "controller.py": "566e28aa46e7daf2a12389e3dad4560112107941",
+    "index.cjs": "6737ef7074b681836d80faeadec7a17e7ee81b98",
+    "netgate.c": "39732bde5e620186075e6c3e06d9f4bcc145b09f",
+    "pins.json": "f4915cacdd0d07779a7908925c501945f615a42d",
+    "toy/app.js": "245f8a75c5ef2b51a19a7842b52beb5f48eeca9d",
+    "toy/math.js": "6f9dc139ee4c925483df9962f0a32ffc696edd8b",
+    "worker.cjs": "c5d4036480ece94bd6ee9e43ab07534a718e3911"
+  },
+  "node": "24.22.2",
+  "codegraph": "1.6.2",
+  "approved_project": "/approved/toy",
+  "scope": "FIXED_HISTORICAL_PUBLIC_TOY_ONLY"
+}

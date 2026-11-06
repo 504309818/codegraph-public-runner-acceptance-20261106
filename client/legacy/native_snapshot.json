@@ -1,0 +1,31 @@
+{
+  "source": "actual ALL_TOOLS model tool directory in this task; metadata only; not CLI MCP list",
+  "names": [
+    "apply_patch",
+    "clock__curr_time",
+    "download_file",
+    "exec_command",
+    "image_gen__imagegen",
+    "list_mcp_resource_templates",
+    "list_mcp_resources",
+    "mcp__codex_apps__cloud_environment_environment_diagnostics",
+    "mcp__codex_apps__cloud_environment_environment_status",
+    "mcp__codex_apps__cloud_environment_onboarding_read_environment_config_draft",
+    "mcp__codex_apps__cloud_environment_onboarding_update_environment_config_draft",
+    "mcp__codex_apps__cloud_environment_onboarding_update_environment_config_metadata",
+    "mcp__codex_apps__cloud_environment_read_environment_diagnostic",
+    "read_mcp_resource",
+    "request_plugin_install",
+    "skills__list",
+    "skills__read",
+    "view_image",
+    "wait_for_environment",
+    "write_stdin"
+  ],
+  "github_native_exposed": false,
+  "context7_native_exposed": false,
+  "codegraph_native_exposed": false,
+  "cloud_environment_native_exposed": true,
+  "observed_at_utc": "2026-11-06T16:27:07.324714+00:00",
+  "scope": "Snapshot hint only; native calls still require current model-layer availability"
+}

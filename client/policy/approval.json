@@ -1,0 +1,15 @@
+{
+  "approved": false,
+  "deployment_digest": "463e15972c5566094db53dc715f9b75cbc09a18cc142d07ad32045914f5bd725",
+  "grant_id": null,
+  "caller_task_id": null,
+  "request_sha256": null,
+  "max_submissions": 1,
+  "allowed_suite": [
+    "codegraph_explore",
+    "codegraph_search",
+    "codegraph_status"
+  ],
+  "approved_at": null,
+  "expires_at": null
+}
