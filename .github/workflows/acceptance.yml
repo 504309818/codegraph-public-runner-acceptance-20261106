@@ -1,7 +1,23 @@
 {
   "name": "Public CodeGraph one-shot acceptance",
+  "run-name": "cfq:${{ inputs.request_id }}:${{ inputs.request_sha256 }}",
   "on": {
-    "workflow_dispatch": {}
+    "workflow_dispatch": {
+      "inputs": {
+        "request_json": {
+          "required": true,
+          "type": "string"
+        },
+        "request_id": {
+          "required": true,
+          "type": "string"
+        },
+        "request_sha256": {
+          "required": true,
+          "type": "string"
+        }
+      }
+    }
   },
   "permissions": {},
   "concurrency": {
@@ -14,9 +30,14 @@
       "timeout-minutes": 20,
       "steps": [
         {
-          "name": "Verify exact public commit in isolated worker",
+          "name": "Execute bound public-only C to F request",
           "shell": "bash",
-          "run": "python3 - <<'PYBOOT'\nimport os,pathlib,re,subprocess,tarfile\nrepo=os.environ['GITHUB_REPOSITORY'];sha=os.environ['GITHUB_SHA']\nassert repo=='504309818/codegraph-public-runner-acceptance-20261106'\nassert re.fullmatch('[0-9a-f]{40}',sha)\nroot=pathlib.Path(os.environ['RUNNER_TEMP'])/'codegraph-public';root.mkdir(mode=0o700)\narchive=root/'source.tar.gz'\nsubprocess.run(['curl','--fail','--silent','--show-error','--location','--proto','=https','--max-time','90','https://codeload.github.com/'+repo+'/tar.gz/'+sha,'--output',str(archive)],check=True)\nwith tarfile.open(archive) as t:\n    members=t.getmembers();top=members[0].name.split('/')[0]\n    for m in members:\n        assert not m.name.startswith('/') and '..' not in pathlib.PurePosixPath(m.name).parts\n        assert m.isfile() or m.isdir()\n    t.extractall(root,filter='data')\nsource=root/top\nassert (source/'controller.py').is_file()\nsubprocess.run(['python3',str(source/'controller.py')],check=True)\nPYBOOT\n"
+          "env": {
+            "CF_REQUEST_JSON": "${{ inputs.request_json }}",
+            "CF_REQUEST_ID": "${{ inputs.request_id }}",
+            "CF_REQUEST_SHA256": "${{ inputs.request_sha256 }}"
+          },
+          "run": "python3 - <<'CFBOOT'\nimport os,pathlib,re,subprocess,tarfile,urllib.request\nrepo=os.environ['GITHUB_REPOSITORY'];sha=os.environ['GITHUB_SHA']\nassert repo=='504309818/codegraph-public-runner-acceptance-20261106' and re.fullmatch('[0-9a-f]{40}',sha)\nroot=pathlib.Path(os.environ['RUNNER_TEMP'])/'cfq-wrapper';root.mkdir(mode=0o700)\nwith urllib.request.urlopen('https://codeload.github.com/'+repo+'/tar.gz/'+sha,timeout=60) as r:data=r.read(2097153)\nassert len(data)<=2097152\narchive=root/'wrapper.tar.gz';archive.write_bytes(data)\nwith tarfile.open(archive) as t:\n    members=t.getmembers();top=members[0].name.split('/')[0]\n    for m in members:\n        assert not m.name.startswith('/') and '..' not in pathlib.PurePosixPath(m.name).parts and (m.isfile() or m.isdir())\n    t.extractall(root,filter='data')\nsubprocess.run(['/usr/bin/python3',str(root/top/'cf_executor.py')],check=True)\nCFBOOT\n"
         }
       ]
     }

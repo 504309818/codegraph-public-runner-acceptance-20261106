@@ -1,0 +1,74 @@
+{
+  "repository": "504309818/codegraph-public-runner-acceptance-20261106",
+  "branch": "fix/mcp-gateway-20261106",
+  "sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+  "parent": "fdef7c59b3a97aeb09796483ec35188608eacfe7",
+  "changed": [
+    "adapter.cjs",
+    "controller.py",
+    "worker.cjs"
+  ],
+  "file_count": 12,
+  "files": [
+    {
+      "path": ".github/workflows/acceptance.yml",
+      "sha256": "8221c8ff3226413688f5c32f960dd319b63aead8a627694a300c8138117c312c",
+      "blob": "83fc891a035b898d0575a124384118be06216e55"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "blob": "7a60b85e148f80966a550e5ab6a762a907c69ca6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0cf9527aa587d74339c4585d724e9b867fb37410b5ce3f0db89a3162e0d16bba",
+      "blob": "b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0ed7473d8c3c1252a7737b06197e12fb11e361d96743f40a523732157f89657a",
+      "blob": "e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d"
+    },
+    {
+      "path": "adapter.cjs",
+      "sha256": "40df4147016be40cb7c2cf74571645a79d9fdb8f96f629c0cb44035a84b92566",
+      "blob": "2932dc1b7c459324e5711beeb96a95fd7b40ea6a"
+    },
+    {
+      "path": "controller.py",
+      "sha256": "1c935ff2232d0f1be1c928f7384733f1ecb15b794205c0ed63930320237b047f",
+      "blob": "566e28aa46e7daf2a12389e3dad4560112107941"
+    },
+    {
+      "path": "index.cjs",
+      "sha256": "3a9871a194f12aaae6b17aef7db52abdd3cab050e0515226cb9e074cb59a1757",
+      "blob": "6737ef7074b681836d80faeadec7a17e7ee81b98"
+    },
+    {
+      "path": "netgate.c",
+      "sha256": "8c12874fff8788ea0ccea9873711d104faf627489f3197e0a6e4bf810ca279fd",
+      "blob": "39732bde5e620186075e6c3e06d9f4bcc145b09f"
+    },
+    {
+      "path": "pins.json",
+      "sha256": "5d0940a51d9d101d2853c359a016c325cfc78beef0451da2cf83bec0b1dbe231",
+      "blob": "f4915cacdd0d07779a7908925c501945f615a42d"
+    },
+    {
+      "path": "toy/app.js",
+      "sha256": "6338d19ac25b6c96ae6c7b07cbbbaea147dc35ef9469870dc7e7afc50c0ed72c",
+      "blob": "245f8a75c5ef2b51a19a7842b52beb5f48eeca9d"
+    },
+    {
+      "path": "toy/math.js",
+      "sha256": "4461bd8d2e6cc0798d3ba584ff866427401bd3f84410695dd42001459a134a06",
+      "blob": "6f9dc139ee4c925483df9962f0a32ffc696edd8b"
+    },
+    {
+      "path": "worker.cjs",
+      "sha256": "4e865792b58172c7b3823a9e4a3ca85114f6022fcbce675f84884872689c0a7b",
+      "blob": "c5d4036480ece94bd6ee9e43ab07534a718e3911"
+    }
+  ]
+}
