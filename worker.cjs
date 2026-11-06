@@ -22,16 +22,34 @@ function deniedUdp(){return new Promise(resolve=>{
  const t=setTimeout(()=>done(false),1000);s.once('error',e=>done(e.code==='EPERM'||e.code==='EACCES'));
  try{s.send(Buffer.from('PUBLIC_PROBE'),descriptor.port,'127.0.0.1',e=>done(!!e&&(e.code==='EPERM'||e.code==='EACCES')));}catch(e){done(e.code==='EPERM'||e.code==='EACCES');}
 });}
+function spawnNode(script){
+ // Only netgate-created FIFO descriptors are accepted; never create sockets.
+ for(const fd of [3,4,5,6,7,8])check(fs.fstatSync(fd).isFIFO(),'PRIVATE_PIPE_TYPE');
+ const child=spawn(NODE,['--liftoff-only','--disable-warning=ExperimentalWarning',script],{cwd:ROOT,env:Object.assign({},process.env),stdio:[3,6,8]});
+ for(const fd of [3,6,8])fs.closeSync(fd);
+ child.stdin=fs.createWriteStream(null,{fd:4});
+ child.stdout=fs.createReadStream(null,{fd:5});
+ child.stderr=fs.createReadStream(null,{fd:7});
+ // With numeric stdio ChildProcess does not own these streams. Drain both
+ // before parsing the index response or declaring clean MCP shutdown.
+ child.pipesClosed=Promise.all([
+  new Promise(resolve=>child.once('close',(code,signal)=>resolve({code,signal}))),
+  ...[child.stdout,child.stderr].map(stream=>new Promise(resolve=>{
+   stream.once('close',resolve);stream.on('error',()=>{child.kill('SIGKILL');});
+  }))
+ ]).then(([exit])=>exit);
+ return child;
+}
 function runIndexer(){return new Promise((resolve,reject)=>{
- const child=spawn(NODE,['--liftoff-only','--disable-warning=ExperimentalWarning','/opt/index.cjs'],{cwd:ROOT,env:Object.assign({},process.env),stdio:['ignore','pipe','pipe']});
+ const child=spawnNode('/opt/index.cjs');child.stdin.on('error',()=>{});child.stdin.end();
  let out='',err='';const timer=setTimeout(()=>{child.kill('SIGKILL');reject(new Error('INDEX_TIMEOUT'));},120000);
  child.stdout.on('data',x=>{out+=x;if(out.length>8192)child.kill('SIGKILL');});
  child.stderr.on('data',x=>{err+=x;if(err.length>32768)child.kill('SIGKILL');});
  child.once('error',()=>{clearTimeout(timer);reject(new Error('INDEX_LAUNCH'));});
- child.once('exit',(code,signal)=>{clearTimeout(timer);report.index_exit={code,signal};if(code!==0||signal)return reject(new Error('INDEX_EXIT'));try{resolve(JSON.parse(out.trim()));}catch(_){reject(new Error('INDEX_RESPONSE'));}});
+ child.pipesClosed.then(({code,signal})=>{clearTimeout(timer);report.index_exit={code,signal};if(code!==0||signal)return reject(new Error('INDEX_EXIT'));try{resolve(JSON.parse(out.trim()));}catch(_){reject(new Error('INDEX_RESPONSE'));}});
 });}
 function startMcp(){
- const child=spawn(NODE,['--liftoff-only','--disable-warning=ExperimentalWarning','/opt/adapter.cjs'],{cwd:ROOT,env:Object.assign({},process.env),stdio:['pipe','pipe','pipe']});
+ const child=spawnNode('/opt/adapter.cjs');
  let buffer='',bytes=0,stderr='',exited=false;const pending=new Map();
  const rejectAll=label=>{for(const x of pending.values()){clearTimeout(x.timer);x.reject(new Error(label));}pending.clear();};
  child.stdout.on('data',chunk=>{
@@ -51,7 +69,7 @@ function startMcp(){
  child.once('exit',(code,signal)=>{exited=true;report.mcp_exit={code,signal};rejectAll('MCP_TRANSPORT_CLOSED');});
  function send(msg){report.requests.push(msg);child.stdin.write(JSON.stringify(msg)+'\n');}
  function rpc(id,method,params){return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{pending.delete(id);child.kill('SIGKILL');reject(new Error('MCP_TIMEOUT'));},45000);pending.set(id,{resolve,reject,timer});send({jsonrpc:'2.0',id,method,params});});}
- async function close(){child.stdin.end();await new Promise(resolve=>{if(exited)return resolve();const timer=setTimeout(()=>{child.kill('SIGKILL');resolve();},5000);child.once('exit',()=>{clearTimeout(timer);resolve();});});check(exited&&report.mcp_exit.code===0&&!report.mcp_exit.signal,'MCP_CLEANUP');report.mcp_stderr=stderr;}
+ async function close(){child.stdin.end();let drained=false;await new Promise(resolve=>{const timer=setTimeout(()=>{child.kill('SIGKILL');resolve();},5000);child.pipesClosed.then(()=>{drained=true;clearTimeout(timer);resolve();});});check(drained&&exited&&report.mcp_exit.code===0&&!report.mcp_exit.signal,'MCP_CLEANUP');report.mcp_stderr=stderr;}
  return {rpc,send,close,abort:()=>child.kill('SIGKILL')};
 }
 function text(result){check(result&&!result.isError&&Array.isArray(result.content),'MCP_TOOL_ERROR');return result.content.map(c=>{check(c.type==='text'&&typeof c.text==='string','MCP_CONTENT');return c.text;}).join('\n');}
