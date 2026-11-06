@@ -1,0 +1,24 @@
+{
+  "name": "Public CodeGraph one-shot acceptance",
+  "on": {
+    "workflow_dispatch": {}
+  },
+  "permissions": {},
+  "concurrency": {
+    "group": "public-codegraph-single-run",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "acceptance": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 20,
+      "steps": [
+        {
+          "name": "Verify exact public commit in isolated worker",
+          "shell": "bash",
+          "run": "python3 - <<'PYBOOT'\nimport os,pathlib,re,subprocess,tarfile\nrepo=os.environ['GITHUB_REPOSITORY'];sha=os.environ['GITHUB_SHA']\nassert repo=='504309818/codegraph-public-runner-acceptance-20261106'\nassert re.fullmatch('[0-9a-f]{40}',sha)\nroot=pathlib.Path(os.environ['RUNNER_TEMP'])/'codegraph-public';root.mkdir(mode=0o700)\narchive=root/'source.tar.gz'\nsubprocess.run(['curl','--fail','--silent','--show-error','--location','--proto','=https','--max-time','90','https://codeload.github.com/'+repo+'/tar.gz/'+sha,'--output',str(archive)],check=True)\nwith tarfile.open(archive) as t:\n    members=t.getmembers();top=members[0].name.split('/')[0]\n    for m in members:\n        assert not m.name.startswith('/') and '..' not in pathlib.PurePosixPath(m.name).parts\n        assert m.isfile() or m.isdir()\n    t.extractall(root,filter='data')\nsource=root/top\nassert (source/'controller.py').is_file()\nsubprocess.run(['python3',str(source/'controller.py')],check=True)\nPYBOOT\n"
+        }
+      ]
+    }
+  }
+}
