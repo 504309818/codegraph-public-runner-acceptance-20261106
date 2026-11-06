@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),crypto=require('node:crypto'),net=require('node:net'),dgram=require('node:dgram');
 const {spawn}=require('node:child_process');
-const ROOT='/approved/toy',NODE='/opt/node';
+const ROOT='/approved/toy',GATEWAY='/gateway',NODE='/opt/node';
 const INDEX_ONLY=process.argv.length===3&&process.argv[2]==='--index-only';
 const descriptor=JSON.parse(fs.readFileSync('/opt/descriptor.json','utf8'));
 const report={scope:'PUBLIC_TOY_ONLY',stage:'safety',status:'NOT_VERIFIED',safety:{},requests:[],responses:[],graph_claim:'NOT_RUN'};
@@ -22,10 +22,10 @@ function deniedUdp(){return new Promise(resolve=>{
  const t=setTimeout(()=>done(false),1000);s.once('error',e=>done(e.code==='EPERM'||e.code==='EACCES'));
  try{s.send(Buffer.from('PUBLIC_PROBE'),descriptor.port,'127.0.0.1',e=>done(!!e&&(e.code==='EPERM'||e.code==='EACCES')));}catch(e){done(e.code==='EPERM'||e.code==='EACCES');}
 });}
-function spawnNode(script){
+function spawnNode(script,cwd=ROOT){
  // Only netgate-created FIFO descriptors are accepted; never create sockets.
  for(const fd of [3,4,5,6,7,8])check(fs.fstatSync(fd).isFIFO(),'PRIVATE_PIPE_TYPE');
- const child=spawn(NODE,['--liftoff-only','--disable-warning=ExperimentalWarning',script],{cwd:ROOT,env:Object.assign({},process.env),stdio:[3,6,8]});
+ const child=spawn(NODE,['--liftoff-only','--disable-warning=ExperimentalWarning',script],{cwd,env:Object.assign({},process.env),stdio:[3,6,8]});
  for(const fd of [3,6,8])fs.closeSync(fd);
  child.stdin=fs.createWriteStream(null,{fd:4});
  child.stdout=fs.createReadStream(null,{fd:5});
@@ -49,7 +49,7 @@ function runIndexer(){return new Promise((resolve,reject)=>{
  child.pipesClosed.then(({code,signal})=>{clearTimeout(timer);report.index_exit={code,signal};if(code!==0||signal)return reject(new Error('INDEX_EXIT'));try{resolve(JSON.parse(out.trim()));}catch(_){reject(new Error('INDEX_RESPONSE'));}});
 });}
 function startMcp(){
- const child=spawnNode('/opt/adapter.cjs');
+ const child=spawnNode('/opt/adapter.cjs',GATEWAY);
  let buffer='',bytes=0,stderr='',exited=false;const pending=new Map();
  const rejectAll=label=>{for(const x of pending.values()){clearTimeout(x.timer);x.reject(new Error(label));}pending.clear();};
  child.stdout.on('data',chunk=>{
@@ -83,6 +83,9 @@ function validateArguments(args,schema){check(schema&&schema.type==='object'&&sc
  report.safety.no_host_home=!fs.existsSync('/home/runner')&&!fs.existsSync('/var/run/docker.sock');
  report.safety.root_readonly=deniedWrite('/opt/forbidden-write');
  report.safety.source_readonly=deniedWrite(ROOT+'/forbidden-write');
+ report.safety.gateway_empty=fs.lstatSync(GATEWAY).isDirectory()&&!fs.lstatSync(GATEWAY).isSymbolicLink()&&fs.readdirSync(GATEWAY).length===0;
+ report.safety.gateway_readonly=deniedWrite(GATEWAY+'/forbidden-write');
+ report.safety.gateway_separate=GATEWAY!==ROOT&&!ROOT.startsWith(GATEWAY+'/')&&!GATEWAY.startsWith(ROOT+'/');
  if(!INDEX_ONLY)report.safety.index_readonly=deniedWrite(ROOT+'/.codegraph/forbidden-write');
  report.safety.source_identity=JSON.stringify(sourceHashes())===JSON.stringify(descriptor.source_hashes);
  report.safety.tcp_denied=await deniedConnect({host:'127.0.0.1',port:descriptor.port});
@@ -110,7 +113,7 @@ function validateArguments(args,schema){check(schema&&schema.type==='object'&&sc
   const names=listed.tools.map(t=>t.name).sort();check(JSON.stringify(names)===JSON.stringify(['codegraph_explore','codegraph_search','codegraph_status']),'TOOLS_NAMES');
   const calls=[['codegraph_status',{projectPath:ROOT}],['codegraph_search',{projectPath:ROOT,query:'computeInvoice',limit:10}],['codegraph_explore',{projectPath:ROOT,query:'computeInvoice addNumbers',maxFiles:2}]];
   const outputs={};let id=3;
-  for(const [name,args]of calls){const def=listed.tools.find(t=>t.name===name);check(def.annotations.readOnlyHint===true&&def.annotations.destructiveHint===false,'READONLY_ANNOTATIONS');validateArguments(args,def.inputSchema);outputs[name]=text(await mcp.rpc(id++,'tools/call',{name,arguments:args}));}
+  for(const [name,args]of calls){const def=listed.tools.find(t=>t.name===name);check(def.annotations.readOnlyHint===true&&def.annotations.destructiveHint===false,'READONLY_ANNOTATIONS');check(Array.isArray(def.inputSchema.required)&&def.inputSchema.required.includes('projectPath'),'PROJECT_PATH_REQUIRED');check(args.projectPath===ROOT,'PROJECT_PATH_FIXED');validateArguments(args,def.inputSchema);outputs[name]=text(await mcp.rpc(id++,'tools/call',{name,arguments:args}));}
   const match=outputs.codegraph_status.match(/\*\*Files indexed:\*\*\s*(\d+)/);check(match&&Number(match[1])>=2,'STATUS_UNRECOGNIZED');
   check(outputs.codegraph_search.includes('computeInvoice'),'SEARCH_EXPECTATION');
   check(outputs.codegraph_explore.includes('computeInvoice')&&outputs.codegraph_explore.includes('addNumbers'),'EXPLORE_EXPECTATION');

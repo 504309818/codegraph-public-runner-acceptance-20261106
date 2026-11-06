@@ -209,6 +209,8 @@ def main():
                 (toy/'.codegraph').mkdir()
                 descriptor={'private_paths':private_paths,'port':port,'unix_socket':unix_path,'source_revision':revision,'source_hashes':source_hashes}
                 (root/'opt/descriptor.json').write_text(json.dumps(descriptor));(root/'opt/descriptor.json').chmod(0o444)
+                # No index, manifest or child project here; a sibling of /approved.
+                (root/'gateway').mkdir()
                 seal_directories(root)
                 result['runtime_layout']=verify_runtime(root,node,interpreter,deps)
                 (context/'Dockerfile').write_text('FROM scratch\nCOPY rootfs/ /\nUSER 65532:65532\nENTRYPOINT ["/opt/netgate"]\n')
