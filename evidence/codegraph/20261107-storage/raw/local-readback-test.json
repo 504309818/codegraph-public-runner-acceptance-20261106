@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "file": "local-save-probe.json",
+  "sha256": "eb67f3ec07489458c9195d7a55582dfb882331760a471672ce50b0f2a06d5b88",
+  "fsync_file": true,
+  "fsync_parent_directory": true,
+  "independent_process_read": true,
+  "persistence_scope": "same running Cloud instance only"
+}

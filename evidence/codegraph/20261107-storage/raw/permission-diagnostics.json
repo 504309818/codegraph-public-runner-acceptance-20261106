@@ -1,0 +1,79 @@
+{
+  "observed_at": "2026-11-07T02:30:35.915418+00:00",
+  "target": "/codex/browser/projectless/0010-1-codegraph-c-f-codegraph-cf-test-codegraph-clou/output",
+  "first_failed_syscall": "mkdir(\"/codex\", 0777)",
+  "errno": 13,
+  "errno_name": "EACCES",
+  "return_value": -1,
+  "process_status": {
+    "Uid": "1000\t1000\t1000\t1000",
+    "Gid": "1000\t1000\t1000\t1000",
+    "CapEff": "0000000000000000",
+    "NoNewPrivs": "0",
+    "Seccomp": "2",
+    "Seccomp_filters": "1"
+  },
+  "permissions": [
+    {
+      "path": "/",
+      "exists": true,
+      "effective_write_access": false,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "symlink": false,
+      "posix_acl_xattr_present": false
+    },
+    {
+      "path": "/codex",
+      "exists": false,
+      "effective_write_access": false
+    },
+    {
+      "path": "/workspace",
+      "exists": true,
+      "effective_write_access": true,
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o755",
+      "symlink": false,
+      "posix_acl_xattr_present": false
+    },
+    {
+      "path": "/workspace/work",
+      "exists": true,
+      "effective_write_access": true,
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o700",
+      "symlink": false,
+      "posix_acl_xattr_present": false
+    },
+    {
+      "path": "/workspace/work/cf-storage-audit-20261107",
+      "exists": true,
+      "effective_write_access": true,
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o700",
+      "symlink": false,
+      "posix_acl_xattr_present": false
+    },
+    {
+      "path": "/tmp",
+      "exists": true,
+      "effective_write_access": true,
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o1777",
+      "symlink": false,
+      "posix_acl_xattr_present": false
+    }
+  ],
+  "mountinfo": [
+    "52 37 0:27 / / rw,relatime - overlay overlay rw,lowerdir=[REDACTED_HOST_MOUNT_PATH],upperdir=[REDACTED_HOST_MOUNT_PATH],workdir=[REDACTED_HOST_MOUNT_PATH],index=off,metacopy=off"
+  ],
+  "tool_sandbox_setting": "filesystem unrestricted; no escalation used in this round",
+  "interpretation": "Root directory DAC permissions independently explain EACCES. Root overlay is rw, not EROFS. No separate /codex or /workspace persistent mount is present. Seccomp mode 2 alone does not identify the blocking rule.",
+  "strace": "1619  mkdir(\"/codex\", 0777)             = -1 EACCES (Permission denied)\n"
+}

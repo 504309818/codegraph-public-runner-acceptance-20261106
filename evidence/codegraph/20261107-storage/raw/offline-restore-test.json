@@ -1,0 +1,22 @@
+{
+  "tested_at": "2026-11-07T02:30:36.179929+00:00",
+  "bundle_sha256": "59cd5a4d148a31501c06cafea9430ec73814ce1e8ee66d20921faf2871795c35",
+  "result": "PASS",
+  "scope": "independent new local process and bare repository; not a new Cloud task",
+  "restored": {
+    "C": {
+      "commit": "9a8a611c515635e74072d165f493bf248a3cf545",
+      "tree_listing": "100644 blob 8f07cb6146b35e0603ece5b92bb181baa40a1a8b\t.gitignore\n100644 blob 77f11a621c5fd9ccf11b3de47f638205c0b88765\tCLIENT_HASHES.json\n100644 blob b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb\tLICENSE\n100644 blob 43993395d91082dd1f2f2509f6a402046016c0be\tREADME.zh-CN.md\n100644 blob f5d954e8cded269c2f4757b7f02f225a2789eeb6\tclient/cf_batch.py\n100644 blob ac2ff1e290bf11c99caa17b51552c34ca6e0b5af\tclient/cf_protocol.py\n100644 blob d6eb2b0609aa1af5eb91d20bf7859641b3408b3c\tclient/legacy/HASHES.json\n100644 blob 1d4a5e5f15ec4f2bac1702ba7f057e3793c2a108\tclient/legacy/README.zh-CN.md\n100644 blob 385efada0063dac5b999d8b9a4e130d5eff7ebea\tclient/legacy/install_candidate.py\n100644 blob 7e157eb66914dd15dbc29325be1a8d6729151f0b\tclient/legacy/mcp_client.py\n100644 blob e623bfe5e5a46946162809a86c2490c806cbc873\tclient/legacy/native_snapshot.json\n100644 blob 5a5006058aa00a8e347dc232184c4f9058b24bfe\tclient/legacy/pins.json\n100644 blob df034ac674578c03980fe832e8b14a9b7c811603\tclient/legacy/registry.json\n100644 blob 81e4810a342c29f4e4a9ba3fd3952833bf879d4c\tclient/legacy/skills/tool-access-review/SKILL.md\n100644 blob 4699cd675ff03e688f0cb5d492380bb61d18a6db\tclient/legacy/tool_access.py\n100644 blob 7e157eb66914dd15dbc29325be1a8d6729151f0b\tclient/mcp_client.py\n100644 blob 7861451f6879edd5f3f8bcf4a0bc49cf2a8deeb2\tclient/policy/approval.json\n100644 blob f6ecffc4120841736bff36f4009f899acd5132c0\tclient/policy/deployment.json\n100644 blob 8b73c6f803b268a2d05cb157ea98c2e154c746d3\tclient/tool_access.py\n"
+    },
+    "F": {
+      "commit": "b94866f8a57311ec72d34c432ea3fccf70862fa0",
+      "tree_listing": "100644 blob 9ad6692ba40efa165f3bc15ebc86f52a5f2e28ac\t.github/workflows/acceptance.yml\n100644 blob 7a60b85e148f80966a550e5ab6a762a907c69ca6\t.gitignore\n100644 blob 7b60dfa958f13716844e4b805bd2dd3e27eb4109\tF_pins.json\n100644 blob b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb\tLICENSE\n100644 blob e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d\tREADME.md\n100644 blob 2932dc1b7c459324e5711beeb96a95fd7b40ea6a\tadapter.cjs\n100644 blob 77495cba63d56268603e44078a379872b4a8d36f\tcf_executor.py\n100644 blob ac2ff1e290bf11c99caa17b51552c34ca6e0b5af\tcf_protocol.py\n100644 blob 566e28aa46e7daf2a12389e3dad4560112107941\tcontroller.py\n100644 blob 6737ef7074b681836d80faeadec7a17e7ee81b98\tindex.cjs\n100644 blob 7e157eb66914dd15dbc29325be1a8d6729151f0b\tmcp_client.py\n100644 blob 39732bde5e620186075e6c3e06d9f4bcc145b09f\tnetgate.c\n100644 blob f4915cacdd0d07779a7908925c501945f615a42d\tpins.json\n100644 blob 245f8a75c5ef2b51a19a7842b52beb5f48eeca9d\ttoy/app.js\n100644 blob 6f9dc139ee4c925483df9962f0a32ffc696edd8b\ttoy/math.js\n100644 blob c5d4036480ece94bd6ee9e43ab07534a718e3911\tworker.cjs\n"
+    },
+    "source": {
+      "commit": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+      "tree_listing": "100644 blob 83fc891a035b898d0575a124384118be06216e55\t.github/workflows/acceptance.yml\n100644 blob 7a60b85e148f80966a550e5ab6a762a907c69ca6\t.gitignore\n100644 blob b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb\tLICENSE\n100644 blob e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d\tREADME.md\n100644 blob 2932dc1b7c459324e5711beeb96a95fd7b40ea6a\tadapter.cjs\n100644 blob 566e28aa46e7daf2a12389e3dad4560112107941\tcontroller.py\n100644 blob 6737ef7074b681836d80faeadec7a17e7ee81b98\tindex.cjs\n100644 blob 39732bde5e620186075e6c3e06d9f4bcc145b09f\tnetgate.c\n100644 blob f4915cacdd0d07779a7908925c501945f615a42d\tpins.json\n100644 blob 245f8a75c5ef2b51a19a7842b52beb5f48eeca9d\ttoy/app.js\n100644 blob 6f9dc139ee4c925483df9962f0a32ffc696edd8b\ttoy/math.js\n100644 blob c5d4036480ece94bd6ee9e43ab07534a718e3911\tworker.cjs\n"
+    }
+  },
+  "file_digests_rechecked": 27,
+  "new_cloud_task_retrieval_verified": false
+}

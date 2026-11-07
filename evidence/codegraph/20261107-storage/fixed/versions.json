@@ -1,0 +1,12 @@
+{
+  "repository": "504309818/codegraph-public-runner-acceptance-20261106",
+  "pins": {
+    "C": "9a8a611c515635e74072d165f493bf248a3cf545",
+    "F": "b94866f8a57311ec72d34c432ea3fccf70862fa0",
+    "source": "c2f220778a402a706b8828d37ae8b3ad57224cf0"
+  },
+  "C_manifest_sha256": "5dd8975db10dae1c0119189f02f42ee4d3e45fa960fb9cc6ddeace5f0c72a67a",
+  "bundle_sha256": "59cd5a4d148a31501c06cafea9430ec73814ce1e8ee66d20921faf2871795c35",
+  "bundle_is_self_contained": true,
+  "network_used": false
+}

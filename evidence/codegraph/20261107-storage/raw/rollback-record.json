@@ -1,0 +1,18 @@
+{
+  "this_round": {
+    "original_project_modified": false,
+    "codegraph_installation_modified": false,
+    "actions_triggered": false,
+    "backup_executor_deployed": false,
+    "permissions_expanded": false,
+    "privilege_escalation_used": false,
+    "github_pushes": 0,
+    "installed_active_pointer_changed": false,
+    "rollback_needed": false,
+    "candidate_cleanup": "Only remove this newly created audit directory if no longer needed; preserve original cf-current evidence and all installation files."
+  },
+  "prior_round": {
+    "source": "prior-audit/fresh-acceptance.json",
+    "note": "Prior acceptance exercised activation rollback and recovery; not rerun this round. Final prior integrity check passed."
+  }
+}

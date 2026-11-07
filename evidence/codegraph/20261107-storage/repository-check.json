@@ -1,0 +1,13 @@
+{
+  "repository": "504309818/codegraph-public-runner-acceptance-20261106",
+  "visibility_checked": "public",
+  "clean_public_base": "8432cd0a7f17c2414882ce079acb390c7a627426",
+  "public_evidence_branch": "evidence/codegraph-public-safe-20261107",
+  "parent_policy": "Exactly one new commit directly on clean public base",
+  "evidence_directory": "evidence/codegraph/20261107-storage",
+  "original_work_branch_unchanged": true,
+  "frozen_source_modified": false,
+  "workflow_modified": false,
+  "push_performed": false,
+  "remote_persistence_verified": false
+}

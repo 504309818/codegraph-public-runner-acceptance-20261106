@@ -1,0 +1,663 @@
+{
+  "status": "CURRENT_INSTANCE_C_DISCOVERY_AND_DENIAL_PASS",
+  "checks": [
+    {
+      "name": "capability_discovery",
+      "status": "PASS",
+      "exit": 0,
+      "result": {
+        "code": "VERIFIED",
+        "verification_scope": "CONFIGURATION_LIST_ONLY",
+        "tools": [
+          {
+            "tool_id": "github-native",
+            "route": "NATIVE",
+            "version": null,
+            "allowed_operations": [
+              "get_public_repository"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer GitHub plugin; not exposed",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "context7-native",
+            "route": "NATIVE",
+            "version": null,
+            "allowed_operations": [
+              "resolve-library-id",
+              "query-docs"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer Context7 MCP; not exposed",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "codegraph-native",
+            "route": "NATIVE",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer CodeGraph MCP; not exposed",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "cloud-environment-native",
+            "route": "NATIVE",
+            "version": null,
+            "allowed_operations": [
+              "environment_status"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer Cloud Environment plugin; observed read-only call",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "codegraph-local",
+            "route": "C_LOCAL",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "safe executor admission required; no endpoint/identity provisioned",
+            "approved_repositories": [],
+            "approved_project_paths": [
+              "/approved/toy"
+            ],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "codegraph-remote",
+            "route": "C_REMOTE",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "safe executor admission required; no endpoint/identity provisioned",
+            "approved_repositories": [],
+            "approved_project_paths": [
+              "/approved/toy"
+            ],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "github-history",
+            "route": "F_BATCH",
+            "version": null,
+            "allowed_operations": [
+              "read_repository",
+              "read_verified_run"
+            ],
+            "read_only": true,
+            "required_auth": "GitHub metadata/actions read on the one approved public repo",
+            "approved_repositories": [
+              "504309818/codegraph-public-runner-acceptance-20261106"
+            ],
+            "approved_project_paths": [],
+            "output_contract": "HISTORICAL_EVIDENCE only; does not assert a new CodeGraph tool invocation",
+            "admitted_executor": true,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ],
+            "source_git_sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+            "index_digest": "aea388efafbe95e4a9427189c9c9a829bb1d5b07651e6450c615cb828075f9de"
+          },
+          {
+            "tool_id": "codegraph-batch",
+            "route": "F_BATCH",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "read_verified_run",
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "historical result read only; new dispatch not authorized",
+            "approved_repositories": [
+              "504309818/codegraph-public-runner-acceptance-20261106"
+            ],
+            "approved_project_paths": [],
+            "output_contract": "HISTORICAL_EVIDENCE only; does not assert a new CodeGraph tool invocation",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ],
+            "source_git_sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+            "index_digest": "aea388efafbe95e4a9427189c9c9a829bb1d5b07651e6450c615cb828075f9de"
+          }
+        ],
+        "native_snapshot_is_current_proof": false,
+        "new_actions_authorized": false,
+        "new_batch_addon": {
+          "binding_enabled": false,
+          "owner_request_grant_required": true,
+          "scope": "FIXED_PUBLIC_TOY_PROFILES_ONLY",
+          "mode": "ON_DEMAND_ASYNC_ACTIONS_NOT_HTTP_MCP"
+        }
+      }
+    },
+    {
+      "name": "preflight_codegraph-native",
+      "status": "PASS",
+      "exit": 10,
+      "result": {
+        "schema_version": 1,
+        "observed_at": "2026-11-07T02:22:10.530235+00:00",
+        "tool_id": "codegraph-native",
+        "route": "NATIVE",
+        "operation": "preflight",
+        "checks": {
+          "configuration": "PRESENT",
+          "live_mcp_handshake": "NOT_VERIFIED",
+          "live_tools_list": "NOT_VERIFIED",
+          "live_status": "NOT_VERIFIED",
+          "live_search": "NOT_VERIFIED",
+          "live_explore": "NOT_VERIFIED"
+        },
+        "code": "NATIVE_TOOL_NOT_EXPOSED",
+        "verification_scope": "NOT_VERIFIED",
+        "reason": "MODEL_TOOL_NOT_IN_OBSERVED_CATALOG",
+        "native_tool_name": null,
+        "native_snapshot_hint_exposed": false,
+        "native_snapshot_observed_at": "2026-11-06T16:27:07.324714+00:00",
+        "native_current_exposure": "NOT_VERIFIED_BY_COMMAND_PROCESS"
+      }
+    },
+    {
+      "name": "preflight_codegraph-local",
+      "status": "PASS",
+      "exit": 15,
+      "result": {
+        "schema_version": 1,
+        "observed_at": "2026-11-07T02:22:10.637921+00:00",
+        "tool_id": "codegraph-local",
+        "route": "C_LOCAL",
+        "operation": "preflight",
+        "checks": {
+          "configuration": "PRESENT",
+          "live_mcp_handshake": "NOT_VERIFIED",
+          "live_tools_list": "NOT_VERIFIED",
+          "live_status": "NOT_VERIFIED",
+          "live_search": "NOT_VERIFIED",
+          "live_explore": "NOT_VERIFIED"
+        },
+        "code": "PROJECT_NOT_APPROVED",
+        "verification_scope": "NOT_VERIFIED",
+        "reason": "LOCAL_EXECUTOR_NOT_SAFELY_ADMITTED"
+      }
+    },
+    {
+      "name": "preflight_codegraph-remote",
+      "status": "PASS",
+      "exit": 17,
+      "result": {
+        "schema_version": 1,
+        "observed_at": "2026-11-07T02:22:10.743063+00:00",
+        "tool_id": "codegraph-remote",
+        "route": "C_REMOTE",
+        "operation": "preflight",
+        "checks": {
+          "configuration": "PRESENT",
+          "live_mcp_handshake": "NOT_VERIFIED",
+          "live_tools_list": "NOT_VERIFIED",
+          "live_status": "NOT_VERIFIED",
+          "live_search": "NOT_VERIFIED",
+          "live_explore": "NOT_VERIFIED"
+        },
+        "code": "EXECUTOR_NOT_DEPLOYED",
+        "verification_scope": "NOT_VERIFIED",
+        "reason": "NO_APPROVED_AUTHENTICATED_HTTPS_EXECUTOR"
+      }
+    },
+    {
+      "name": "preflight_codegraph-batch",
+      "status": "PASS",
+      "exit": 17,
+      "result": {
+        "code": "EXECUTOR_NOT_DEPLOYED",
+        "reason": "OWNER_DEPLOYMENT_AND_REQUEST_APPROVAL_REQUIRED",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "deny_batch_codegraph_status",
+      "status": "PASS",
+      "exit": 17,
+      "result": {
+        "code": "EXECUTOR_NOT_DEPLOYED",
+        "reason": "OWNER_DEPLOYMENT_NOT_APPROVED",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "deny_batch_codegraph_search",
+      "status": "PASS",
+      "exit": 17,
+      "result": {
+        "code": "EXECUTOR_NOT_DEPLOYED",
+        "reason": "OWNER_DEPLOYMENT_NOT_APPROVED",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "deny_batch_codegraph_explore",
+      "status": "PASS",
+      "exit": 17,
+      "result": {
+        "code": "EXECUTOR_NOT_DEPLOYED",
+        "reason": "OWNER_DEPLOYMENT_NOT_APPROVED",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "unapproved_project",
+      "status": "PASS",
+      "exit": 15,
+      "result": {
+        "code": "PROJECT_NOT_APPROVED",
+        "reason": "ROOT_NOT_APPROVED",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "dynamic_endpoint",
+      "status": "PASS",
+      "exit": 15,
+      "result": {
+        "code": "PROJECT_NOT_APPROVED",
+        "reason": "SENSITIVE_OR_DYNAMIC_INPUT",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "query_bound",
+      "status": "PASS",
+      "exit": 14,
+      "result": {
+        "code": "SCHEMA_MISMATCH",
+        "reason": "QUERY_BOUND",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "tamper_rejected_client/tool_access.py",
+      "status": "PASS"
+    },
+    {
+      "name": "tamper_rejected_client/policy/deployment.json",
+      "status": "PASS"
+    },
+    {
+      "name": "activation_rollback_denies_entry",
+      "status": "PASS",
+      "exit": 18,
+      "result": {
+        "code": "CALL_FAILED",
+        "reason": "PINNED_INSTALL_INTEGRITY_FAILED",
+        "verification_scope": "NOT_VERIFIED"
+      }
+    },
+    {
+      "name": "reactivation_discovery",
+      "status": "PASS",
+      "exit": 0,
+      "result": {
+        "code": "VERIFIED",
+        "verification_scope": "CONFIGURATION_LIST_ONLY",
+        "tools": [
+          {
+            "tool_id": "github-native",
+            "route": "NATIVE",
+            "version": null,
+            "allowed_operations": [
+              "get_public_repository"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer GitHub plugin; not exposed",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "context7-native",
+            "route": "NATIVE",
+            "version": null,
+            "allowed_operations": [
+              "resolve-library-id",
+              "query-docs"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer Context7 MCP; not exposed",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "codegraph-native",
+            "route": "NATIVE",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer CodeGraph MCP; not exposed",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "cloud-environment-native",
+            "route": "NATIVE",
+            "version": null,
+            "allowed_operations": [
+              "environment_status"
+            ],
+            "read_only": true,
+            "required_auth": "model-layer Cloud Environment plugin; observed read-only call",
+            "approved_repositories": [],
+            "approved_project_paths": [],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "codegraph-local",
+            "route": "C_LOCAL",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "safe executor admission required; no endpoint/identity provisioned",
+            "approved_repositories": [],
+            "approved_project_paths": [
+              "/approved/toy"
+            ],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "codegraph-remote",
+            "route": "C_REMOTE",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "safe executor admission required; no endpoint/identity provisioned",
+            "approved_repositories": [],
+            "approved_project_paths": [
+              "/approved/toy"
+            ],
+            "output_contract": "structured metadata; no credentials or arbitrary source",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ]
+          },
+          {
+            "tool_id": "github-history",
+            "route": "F_BATCH",
+            "version": null,
+            "allowed_operations": [
+              "read_repository",
+              "read_verified_run"
+            ],
+            "read_only": true,
+            "required_auth": "GitHub metadata/actions read on the one approved public repo",
+            "approved_repositories": [
+              "504309818/codegraph-public-runner-acceptance-20261106"
+            ],
+            "approved_project_paths": [],
+            "output_contract": "HISTORICAL_EVIDENCE only; does not assert a new CodeGraph tool invocation",
+            "admitted_executor": true,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ],
+            "source_git_sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+            "index_digest": "aea388efafbe95e4a9427189c9c9a829bb1d5b07651e6450c615cb828075f9de"
+          },
+          {
+            "tool_id": "codegraph-batch",
+            "route": "F_BATCH",
+            "version": "1.6.2",
+            "allowed_operations": [
+              "read_verified_run",
+              "codegraph_status",
+              "codegraph_search",
+              "codegraph_explore"
+            ],
+            "read_only": true,
+            "required_auth": "historical result read only; new dispatch not authorized",
+            "approved_repositories": [
+              "504309818/codegraph-public-runner-acceptance-20261106"
+            ],
+            "approved_project_paths": [],
+            "output_contract": "HISTORICAL_EVIDENCE only; does not assert a new CodeGraph tool invocation",
+            "admitted_executor": false,
+            "failure_codes": [
+              "NATIVE_TOOL_NOT_EXPOSED",
+              "AUTH_MISSING",
+              "SERVER_NOT_REACHABLE",
+              "TOOL_NOT_LISTED",
+              "SCHEMA_MISMATCH",
+              "PROJECT_NOT_APPROVED",
+              "INDEX_PROVENANCE_MISSING",
+              "EXECUTOR_NOT_DEPLOYED",
+              "CALL_FAILED"
+            ],
+            "source_git_sha": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+            "index_digest": "aea388efafbe95e4a9427189c9c9a829bb1d5b07651e6450c615cb828075f9de"
+          }
+        ],
+        "native_snapshot_is_current_proof": false,
+        "new_actions_authorized": false,
+        "new_batch_addon": {
+          "binding_enabled": false,
+          "owner_request_grant_required": true,
+          "scope": "FIXED_PUBLIC_TOY_PROFILES_ONLY",
+          "mode": "ON_DEMAND_ASYNC_ACTIONS_NOT_HTTP_MCP"
+        }
+      }
+    },
+    {
+      "name": "repeat_install_and_unchanged_files",
+      "status": "PASS",
+      "files": 15
+    },
+    {
+      "name": "no_auth_no_host_workspace_no_network_readonly_client",
+      "status": "PASS"
+    }
+  ],
+  "check_count": 17,
+  "new_cloud_task_verified": false,
+  "real_new_codegraph_query_verified": false,
+  "github_actions_dispatched": false
+}

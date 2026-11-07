@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "scope": "Every allowlisted file plus every object reachable in the embedded public fixed-source bundle",
+  "method": [
+    "Explicit file and field allowlists",
+    "Full omission of original second-MCP provider response",
+    "Omission of account-authentication log row and request/authorization drafts",
+    "Forbidden service-field and exact-identifier checks",
+    "Credential, key, credential-URL and platform-identifier patterns",
+    "Manual review of retained report, refusal logs and source provenance"
+  ],
+  "findings": [],
+  "embedded_public_objects_reviewed": {
+    "commits": 5,
+    "trees": 15,
+    "blobs": 38,
+    "tags": 0
+  },
+  "source_bundle_unchanged": true,
+  "history_requirement": "New branch must have exactly clean public base plus one evidence commit; isolated push-object audit recorded after commit",
+  "limitations": "Bounded review of the specified evidence set; no claim about arbitrary external sources or unexamined data."
+}

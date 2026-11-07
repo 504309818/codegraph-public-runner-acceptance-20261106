@@ -1,0 +1,38 @@
+{
+  "source": "Existing controlled read-only test; selected public-result facts only. No MCP call was rerun for publication.",
+  "provider": "Firecrawl",
+  "test_date": "2026-11-07",
+  "method": {
+    "capability_discovery": "Host-exposed tool contracts inspected",
+    "search": {
+      "sources": [
+        "web"
+      ],
+      "limit": 1,
+      "query": "site:example.com \"Example Domain\""
+    },
+    "page_read": {
+      "url": "https://www.example.com/",
+      "formats": [
+        "markdown"
+      ],
+      "maxAge": 0,
+      "storeInCache": false,
+      "domainTools": false
+    }
+  },
+  "result": {
+    "search_success": true,
+    "http_status": 200,
+    "page_title": "Example Domain",
+    "public_text_fact": "The domain is for documentation examples.",
+    "source_url": "https://www.example.com/"
+  },
+  "conclusion": {
+    "SECOND_MCP_VERIFIED": true,
+    "scope": "Host native public read-only capability discovery and call only",
+    "frozen_C_integration_verified": false
+  },
+  "excluded": "Original provider responses, service session identifiers and account/billing metadata are not in this public evidence set.",
+  "limitation": "This summary is a selected historical record, not a fresh call or an independent public retrieval receipt."
+}

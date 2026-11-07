@@ -1,0 +1,11 @@
+{
+  "first_package_verification": "FAILED_CLOSED",
+  "failure": "Archive entry count did not equal manifest count plus one",
+  "observed_manifest_entries": 35,
+  "observed_archive_entries": 37,
+  "unlisted_archive_entries": ["SHA256SUMS", "prior-audit/SHA256SUMS"],
+  "cause": "The initial inventory excluded all files named SHA256SUMS, including the prior evidence inventory",
+  "correction": "Exclude only the new root inventory itself; include and hash prior-audit/SHA256SUMS",
+  "original_evidence_modified": false,
+  "claim_from_failed_verification": "No success was reported; final independent verification is recorded separately"
+}

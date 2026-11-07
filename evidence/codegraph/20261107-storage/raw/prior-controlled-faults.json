@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "disabled_deployment",
+      "code": "EXECUTOR_NOT_DEPLOYED",
+      "reason": "DEPLOYMENT_NOT_APPROVED",
+      "transport_calls": [],
+      "passed": true
+    },
+    {
+      "name": "missing_owner_approval",
+      "code": "PROJECT_NOT_APPROVED",
+      "reason": "OWNER_APPROVAL_REQUIRED",
+      "transport_calls": [],
+      "passed": true
+    },
+    {
+      "name": "digest_tamper",
+      "code": "INDEX_PROVENANCE_MISSING",
+      "reason": "REQUEST_DIGEST",
+      "passed": true
+    },
+    {
+      "name": "expired",
+      "code": "PROJECT_NOT_APPROVED",
+      "reason": "REQUEST_EXPIRED",
+      "passed": true
+    },
+    {
+      "name": "F_unavailable_simulation",
+      "code": "SERVER_NOT_REACHABLE",
+      "reason": "SIMULATED_F_UNAVAILABLE",
+      "transport_calls": [
+        "preflight"
+      ],
+      "dispatches": 0,
+      "state": "PREPARED",
+      "passed": true,
+      "real_failover_verified": false
+    },
+    {
+      "name": "single_submission_response_loss_simulation",
+      "state": "SUBMISSION_UNCERTAIN",
+      "repeat_state": "SUBMISSION_UNCERTAIN",
+      "simulated_submissions": 1,
+      "real_remote_dispatches": 0,
+      "passed": true,
+      "scope": "single_shared_local_ledger_only"
+    }
+  ],
+  "all_passed": true,
+  "real_remote_dispatches": 0,
+  "failover_verified": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "EVIDENCE_NOT_PERSISTED",
+  "local_save_verified": true,
+  "local_offline_restore_verified": true,
+  "cross_cloud_task_retrieval_verified": false,
+  "reasons": [
+    "Workspace resolves to the current instance rw overlay; no dedicated persistent mount or retention contract observed.",
+    "Environment status exposes the loaded configuration version, not a save/snapshot commit containing this round files.",
+    "No authorized artifact-upload/publish/save interface for these local files is available in the current tools.",
+    "No new Cloud task was created to retrieve these files."
+  ],
+  "candidate_path": "/workspace/work/cf-storage-audit-20261107/payload",
+  "formal_output_directory_writable": false,
+  "automatic_remote_fallback": false
+}

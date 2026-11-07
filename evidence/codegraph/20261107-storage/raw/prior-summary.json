@@ -1,0 +1,41 @@
+{
+  "audit_id": "2c41e2c9-4e02-45d1-97a2-47921094ea7b",
+  "environment_id": "[REDACTED_ENVIRONMENT_ID]",
+  "declared_environment_name": "CodeGraph-CF-Test",
+  "platform_environment_name_independently_returned": false,
+  "platform_task_id_exposed": false,
+  "results": {
+    "CLOUD_STARTUP_VERIFIED": {
+      "passed": true,
+      "scope": "fresh environment offline pinned C startup, explicit CLI discovery, integrity and denial; not native CodeGraph MCP or a live query"
+    },
+    "C_F_CLOUD_REUSABLE_VERIFIED": {
+      "passed": false,
+      "reason": [
+        "no approved new Actions run",
+        "API CONNECT 403",
+        "closed launcher has no network/auth and read-only absent batch state"
+      ]
+    },
+    "FAILOVER_VERIFIED": {
+      "passed": false,
+      "reason": [
+        "no admitted independent alternate full executor",
+        "only local controlled denial/outage simulations"
+      ]
+    },
+    "SECOND_MCP_VERIFIED": {
+      "passed": true,
+      "scope": "host native Firecrawl capability discovery and controlled public-page read; not integrated into frozen C CLI"
+    }
+  },
+  "fresh_acceptance_checks": 17,
+  "fresh_acceptance_new_write": true,
+  "new_actions_dispatches_by_this_audit": 0,
+  "real_new_codegraph_query": false,
+  "request_id": "0cd14b61-699c-48a9-b098-1252ab7dc966",
+  "request_sha256": "d07ae6919ef0361932c587a1550599181512fb58ef057050afcfba5c3abf5fb1",
+  "request_expires_at": "2026-11-07T02:53:25+00:00",
+  "review_only_not_dispatch_ready": true,
+  "output_directory_failure": "Permission denied creating /codex/.../output; no sudo executable; outer-executor retry also permission denied"
+}

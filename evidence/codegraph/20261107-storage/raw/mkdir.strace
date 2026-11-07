@@ -1,0 +1,1 @@
+1619  mkdir("/codex", 0777)             = -1 EACCES (Permission denied)

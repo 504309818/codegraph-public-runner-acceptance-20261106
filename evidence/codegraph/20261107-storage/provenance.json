@@ -1,0 +1,159 @@
+{
+  "source_set_file_count": 27,
+  "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+  "source_manifest_sha256": "ee14ac0eeffda66a9d3db84ee3e89db40ad65b00ab950b53d9bf496a85d0dec4",
+  "source_manifest_verified": true,
+  "public_method": "Explicit file allowlist; no recursive raw-data copy",
+  "entries": [
+    {
+      "public_path": "fixed/frozen-versions.bundle",
+      "public_sha256": "59cd5a4d148a31501c06cafea9430ec73814ce1e8ee66d20921faf2871795c35",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/fixed/frozen-versions.bundle",
+      "source_sha256": "59cd5a4d148a31501c06cafea9430ec73814ce1e8ee66d20921faf2871795c35",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "fixed/versions.json",
+      "public_sha256": "4f85a587b940bf858922e863c455066c67923fd318d4dcb0e9b2eddd120a5af6",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/fixed/versions.json",
+      "source_sha256": "4f85a587b940bf858922e863c455066c67923fd318d4dcb0e9b2eddd120a5af6",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "previous-storage-report.zh-CN.md",
+      "public_sha256": "14a908212ab56cc266de62f8298648cdccc7749defa26987ae3c8f77dbde1b4d",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/previous-storage-report.zh-CN.md",
+      "source_sha256": "14a908212ab56cc266de62f8298648cdccc7749defa26987ae3c8f77dbde1b4d",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/local-readback-test.json",
+      "public_sha256": "4f95fb5d3161d92f2372228e1afb3749117b32b56b6475e90871b8a203a4fcf5",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/local-readback-test.json",
+      "source_sha256": "4f95fb5d3161d92f2372228e1afb3749117b32b56b6475e90871b8a203a4fcf5",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/mkdir.strace",
+      "public_sha256": "633b6c96d809498f0800e023de6e910247050af147a6e065848a33ccb42bdb50",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/mkdir.strace",
+      "source_sha256": "633b6c96d809498f0800e023de6e910247050af147a6e065848a33ccb42bdb50",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/offline-restore-test.json",
+      "public_sha256": "28ab167d25758fd83e9bdb6efb7f346ab1e0395faad47886718b49e7e5fd7051",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/offline-restore-test.json",
+      "source_sha256": "28ab167d25758fd83e9bdb6efb7f346ab1e0395faad47886718b49e7e5fd7051",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/packaging-correction.json",
+      "public_sha256": "b4718f55d922dd68e3d14282902852e6c0e620ddebd95f735ff1149714b10d71",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/packaging-correction.json",
+      "source_sha256": "b4718f55d922dd68e3d14282902852e6c0e620ddebd95f735ff1149714b10d71",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/permission-diagnostics.json",
+      "public_sha256": "fe6481cda98db5853b871ddfc0186dfd4e97cfdf1fd7590cea93b016573b502e",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/permission-diagnostics.json",
+      "source_sha256": "fe6481cda98db5853b871ddfc0186dfd4e97cfdf1fd7590cea93b016573b502e",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/persistence-assessment.json",
+      "public_sha256": "bb5191584ae1d318b09bf193aa6f9acdc06ecfbd4cfb3b6eb2c5658ce994d231",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/persistence-assessment.json",
+      "source_sha256": "bb5191584ae1d318b09bf193aa6f9acdc06ecfbd4cfb3b6eb2c5658ce994d231",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/prior-controlled-faults.json",
+      "public_sha256": "c8e7953cf26ce45b5a0ba56492e4903052c0b41be26110c554974bb82d895265",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/prior-controlled-faults.json",
+      "source_sha256": "c8e7953cf26ce45b5a0ba56492e4903052c0b41be26110c554974bb82d895265",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/prior-fresh-acceptance.json",
+      "public_sha256": "c35c65a00d49915f5033a3bc1735a6ee1eb824378dc55d25e53d6ab2e5eb05cc",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/prior-fresh-acceptance.json",
+      "source_sha256": "c35c65a00d49915f5033a3bc1735a6ee1eb824378dc55d25e53d6ab2e5eb05cc",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/prior-fresh-provenance.json",
+      "public_sha256": "444014532eb938657931a9e2ceb67a8d473e1d17847f4eb12fb9e04c76fdd9c3",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/prior-fresh-provenance.json",
+      "source_sha256": "444014532eb938657931a9e2ceb67a8d473e1d17847f4eb12fb9e04c76fdd9c3",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/prior-launcher-runtime-limits.json",
+      "public_sha256": "480a93727857a37568c97d047fa1d8f4038307de209fcd5cdb1a3bd2fc68e9fc",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/prior-launcher-runtime-limits.json",
+      "source_sha256": "480a93727857a37568c97d047fa1d8f4038307de209fcd5cdb1a3bd2fc68e9fc",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/prior-summary.json",
+      "public_sha256": "9a4d626059c83e3f6c6bcf2ee7a3d6da998ddf7847c265b28b2bfbe5760ef31e",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/prior-summary.json",
+      "source_sha256": "9a4d626059c83e3f6c6bcf2ee7a3d6da998ddf7847c265b28b2bfbe5760ef31e",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/rollback-record.json",
+      "public_sha256": "e353d217e9f7846c11622152299639badf258c3f94a116d619e1b27ddf3bf1f6",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/rollback-record.json",
+      "source_sha256": "e353d217e9f7846c11622152299639badf258c3f94a116d619e1b27ddf3bf1f6",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "verify-evidence.py",
+      "public_sha256": "c7486677629e4d1e07109937411e8a03726e09124b428c2587a4e4171e818a45",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/verify-evidence.py",
+      "source_sha256": "c7486677629e4d1e07109937411e8a03726e09124b428c2587a4e4171e818a45",
+      "transformation": "Unchanged reviewed public evidence"
+    },
+    {
+      "public_path": "raw/prior-commands.jsonl",
+      "public_sha256": "c12543e2ba64452c6a55c0c3c4e884755741c3c8b2d238627a66041765de30ee",
+      "source_commit": "f970394a02dd7f2c51fbf32891430ef39cfb9cd3",
+      "source_path": "evidence/codegraph/20261107-storage/raw/prior-commands.jsonl",
+      "source_sha256": "407730fe421cb392b2daa7d1d4fa40dd6af968b56ddd73d889c3ff7553e646f6",
+      "transformation": "Authentication-status row omitted"
+    }
+  ],
+  "summary_derivation": {
+    "public_path": "raw/second-mcp-summary.json",
+    "method": "Field-by-field construction from already recorded public page facts; no provider-response envelope copied"
+  },
+  "excluded_paths": [
+    "raw/prior-second-mcp.json",
+    "raw/prior-session.json",
+    "raw/prior-request.json",
+    "raw/prior-grant-unapproved.json",
+    "raw/prior-dispatch-review-NOT-SUBMITTED.json"
+  ],
+  "controlled_original_retained_locally": true,
+  "controlled_storage_is_remote_persistent": false,
+  "note": "The blocked source commit is not an ancestor or a target ref of the public branch. Source commit identifiers and hashes do not embed its excluded content."
+}

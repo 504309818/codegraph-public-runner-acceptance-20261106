@@ -1,0 +1,180 @@
+{
+  "C": "9a8a611c515635e74072d165f493bf248a3cf545",
+  "F": "b94866f8a57311ec72d34c432ea3fccf70862fa0",
+  "source": "c2f220778a402a706b8828d37ae8b3ad57224cf0",
+  "manifest_sha256": "5dd8975db10dae1c0119189f02f42ee4d3e45fa960fb9cc6ddeace5f0c72a67a",
+  "client_files": [
+    {
+      "path": "cf_batch.py",
+      "sha256": "db3125905b0ffe5ce2de3f6203d4e0296601b21179cdd691aeb90296a4326471",
+      "git_blob": "f5d954e8cded269c2f4757b7f02f225a2789eeb6",
+      "matches": true
+    },
+    {
+      "path": "cf_protocol.py",
+      "sha256": "728efb976f05d43e57044d0eb871d81a567e97e4b829ec9e68f31c288afa2cc7",
+      "git_blob": "ac2ff1e290bf11c99caa17b51552c34ca6e0b5af",
+      "matches": true
+    },
+    {
+      "path": "legacy/HASHES.json",
+      "sha256": "75f90b007622cb78cd299641d167fb01f69cfa070cf43540886b3afde6a48f5d",
+      "git_blob": "d6eb2b0609aa1af5eb91d20bf7859641b3408b3c",
+      "matches": true
+    },
+    {
+      "path": "legacy/README.zh-CN.md",
+      "sha256": "f583aeb69bc39dc5325176a278d18a8dec1d7718626f4ee71b59842ade0e1a2b",
+      "git_blob": "1d4a5e5f15ec4f2bac1702ba7f057e3793c2a108",
+      "matches": true
+    },
+    {
+      "path": "legacy/install_candidate.py",
+      "sha256": "57e89f351fb550167ec973f064bb4facc84081ccc218061e69293abf2efc3508",
+      "git_blob": "385efada0063dac5b999d8b9a4e130d5eff7ebea",
+      "matches": true
+    },
+    {
+      "path": "legacy/mcp_client.py",
+      "sha256": "ab35c89de3e2c99289cfadfaa2d88491c0ccab0931361d9890b98332d502f63e",
+      "git_blob": "7e157eb66914dd15dbc29325be1a8d6729151f0b",
+      "matches": true
+    },
+    {
+      "path": "legacy/native_snapshot.json",
+      "sha256": "da65891fc2d668dad4a278f192d02f5f17d087833a8c3afe7bb87c1d09ecb8ff",
+      "git_blob": "e623bfe5e5a46946162809a86c2490c806cbc873",
+      "matches": true
+    },
+    {
+      "path": "legacy/pins.json",
+      "sha256": "bcc9392daf5e1cc86435161299d708d5ab43b42c2fbc855d046012dfa85a7e8a",
+      "git_blob": "5a5006058aa00a8e347dc232184c4f9058b24bfe",
+      "matches": true
+    },
+    {
+      "path": "legacy/registry.json",
+      "sha256": "8f6b7736e8e3590e2b7905b818533dd9d83f9d2b17ff60f1527bc9166fe59754",
+      "git_blob": "df034ac674578c03980fe832e8b14a9b7c811603",
+      "matches": true
+    },
+    {
+      "path": "legacy/skills/tool-access-review/SKILL.md",
+      "sha256": "597fce6ee3932875d69984d0845be1a2eced6f446a625e768c2bbf3b26bd8af8",
+      "git_blob": "81e4810a342c29f4e4a9ba3fd3952833bf879d4c",
+      "matches": true
+    },
+    {
+      "path": "legacy/tool_access.py",
+      "sha256": "1969b07cd939db8944deb5bfd252cfb83a5ecbdedc68e52e0e37d9d84a7d9b11",
+      "git_blob": "4699cd675ff03e688f0cb5d492380bb61d18a6db",
+      "matches": true
+    },
+    {
+      "path": "mcp_client.py",
+      "sha256": "ab35c89de3e2c99289cfadfaa2d88491c0ccab0931361d9890b98332d502f63e",
+      "git_blob": "7e157eb66914dd15dbc29325be1a8d6729151f0b",
+      "matches": true
+    },
+    {
+      "path": "policy/approval.json",
+      "sha256": "493e9637497c77fce658c915c6a631ca2e41e10787a8206c58d41ac29bf81b36",
+      "git_blob": "7861451f6879edd5f3f8bcf4a0bc49cf2a8deeb2",
+      "matches": true
+    },
+    {
+      "path": "policy/deployment.json",
+      "sha256": "fb1e69fe3e429469eb556432912a17fa3e5783b906f503b299713b32c21fad4d",
+      "git_blob": "f6ecffc4120841736bff36f4009f899acd5132c0",
+      "matches": true
+    },
+    {
+      "path": "tool_access.py",
+      "sha256": "90a8bcb5bb5322a897ea5356b8e31da2c8403288dc37ab382fdab719a91a6d2d",
+      "git_blob": "8b73c6f803b268a2d05cb157ea98c2e154c746d3",
+      "matches": true
+    }
+  ],
+  "F_tree": {
+    ".github/workflows/acceptance.yml": "9ad6692ba40efa165f3bc15ebc86f52a5f2e28ac",
+    ".gitignore": "7a60b85e148f80966a550e5ab6a762a907c69ca6",
+    "F_pins.json": "7b60dfa958f13716844e4b805bd2dd3e27eb4109",
+    "LICENSE": "b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb",
+    "README.md": "e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d",
+    "adapter.cjs": "2932dc1b7c459324e5711beeb96a95fd7b40ea6a",
+    "cf_executor.py": "77495cba63d56268603e44078a379872b4a8d36f",
+    "cf_protocol.py": "ac2ff1e290bf11c99caa17b51552c34ca6e0b5af",
+    "controller.py": "566e28aa46e7daf2a12389e3dad4560112107941",
+    "index.cjs": "6737ef7074b681836d80faeadec7a17e7ee81b98",
+    "mcp_client.py": "7e157eb66914dd15dbc29325be1a8d6729151f0b",
+    "netgate.c": "39732bde5e620186075e6c3e06d9f4bcc145b09f",
+    "pins.json": "f4915cacdd0d07779a7908925c501945f615a42d",
+    "toy/app.js": "245f8a75c5ef2b51a19a7842b52beb5f48eeca9d",
+    "toy/math.js": "6f9dc139ee4c925483df9962f0a32ffc696edd8b",
+    "worker.cjs": "c5d4036480ece94bd6ee9e43ab07534a718e3911"
+  },
+  "source_files": [
+    {
+      "path": ".github/workflows/acceptance.yml",
+      "sha256": "8221c8ff3226413688f5c32f960dd319b63aead8a627694a300c8138117c312c",
+      "blob": "83fc891a035b898d0575a124384118be06216e55"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "blob": "7a60b85e148f80966a550e5ab6a762a907c69ca6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0cf9527aa587d74339c4585d724e9b867fb37410b5ce3f0db89a3162e0d16bba",
+      "blob": "b7b7ba15e6ba540b90ea5a578d7c2d4e6d5419eb"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0ed7473d8c3c1252a7737b06197e12fb11e361d96743f40a523732157f89657a",
+      "blob": "e5a6c2d6fd2657912a0c2a71bfc1720d3eb2a52d"
+    },
+    {
+      "path": "adapter.cjs",
+      "sha256": "40df4147016be40cb7c2cf74571645a79d9fdb8f96f629c0cb44035a84b92566",
+      "blob": "2932dc1b7c459324e5711beeb96a95fd7b40ea6a"
+    },
+    {
+      "path": "controller.py",
+      "sha256": "1c935ff2232d0f1be1c928f7384733f1ecb15b794205c0ed63930320237b047f",
+      "blob": "566e28aa46e7daf2a12389e3dad4560112107941"
+    },
+    {
+      "path": "index.cjs",
+      "sha256": "3a9871a194f12aaae6b17aef7db52abdd3cab050e0515226cb9e074cb59a1757",
+      "blob": "6737ef7074b681836d80faeadec7a17e7ee81b98"
+    },
+    {
+      "path": "netgate.c",
+      "sha256": "8c12874fff8788ea0ccea9873711d104faf627489f3197e0a6e4bf810ca279fd",
+      "blob": "39732bde5e620186075e6c3e06d9f4bcc145b09f"
+    },
+    {
+      "path": "pins.json",
+      "sha256": "5d0940a51d9d101d2853c359a016c325cfc78beef0451da2cf83bec0b1dbe231",
+      "blob": "f4915cacdd0d07779a7908925c501945f615a42d"
+    },
+    {
+      "path": "toy/app.js",
+      "sha256": "6338d19ac25b6c96ae6c7b07cbbbaea147dc35ef9469870dc7e7afc50c0ed72c",
+      "blob": "245f8a75c5ef2b51a19a7842b52beb5f48eeca9d"
+    },
+    {
+      "path": "toy/math.js",
+      "sha256": "4461bd8d2e6cc0798d3ba584ff866427401bd3f84410695dd42001459a134a06",
+      "blob": "6f9dc139ee4c925483df9962f0a32ffc696edd8b"
+    },
+    {
+      "path": "worker.cjs",
+      "sha256": "4e865792b58172c7b3823a9e4a3ca85114f6022fcbce675f84884872689c0a7b",
+      "blob": "c5d4036480ece94bd6ee9e43ab07534a718e3911"
+    }
+  ],
+  "local_git_objects_verified": true,
+  "remote_branch_read_is_separate_command": true
+}
